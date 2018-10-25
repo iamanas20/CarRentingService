@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="LocationWFPApp.User_Control.User_Control_Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LocationWFPApp.User_Control"
+             mc:Ignorable="d" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderThickness="0 2 0 0" BorderBrush="#39adae" >
+        </Border>
+        <ScrollViewer Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+            <Grid Background="#323232">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid MinWidth="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" FontFamily="Segoe UI" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Foreground="White">Login</TextBlock>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Height="30" Margin="0, 45, 0, 0">
+                        <TextBlock FontFamily="Segoe UI" Foreground="#a1a1a1" Panel.ZIndex="1" Margin="10,0,-55,0" VerticalAlignment="Center">Username</TextBlock>
+                        <Border Width="1" Height="15" Background="#a1a1a1" Margin="60,0,0,0" Panel.ZIndex="1"></Border>
+                        <TextBox Name="Username_Txt" Padding="80,6,0,0" Margin="-70, 0, 0, 0" Width="250" BorderThickness="0,0,0,2"  BorderBrush="#39adae" Foreground="White" Background="#FF252525"></TextBox>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Height="30" Margin="0, 15, 0, 0">
+                        <TextBlock FontFamily="Segoe UI" Foreground="#a1a1a1" Panel.ZIndex="1" Margin="10,0,-51,0" VerticalAlignment="Center">Password</TextBlock>
+                        <Border Width="1" Height="15" Background="#a1a1a1" Margin="60,0,0,0" Panel.ZIndex="1"></Border>
+                        <PasswordBox Name="Password_Pbox" Padding="80,6,0,0" Margin="-70, 0, 0, 0" Width="250" BorderThickness="0,0,0,2"  BorderBrush="#39adae" Foreground="White" Background="#FF252525"></PasswordBox>
+                    </StackPanel>
+                    <Button Name="Login_Button" Click="Login_Button_Click" Grid.Row="3" HorizontalAlignment="Center" Margin="0,20,0,0">Login</Button>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

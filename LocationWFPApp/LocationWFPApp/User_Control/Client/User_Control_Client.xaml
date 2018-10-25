@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="LocationWFPApp.User_Control_Clients"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LocationWFPApp"
+             mc:Ignorable="d" Loaded="UserControl_Loaded"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Border Background="White" Margin="15,0,15,0">
+                    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Margin="0,0,0,0" FontSize="18" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI">Filter 1</TextBlock>
+                        <TextBox Name="Filter1_Txt" Width="170" Height="25" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"></TextBox>
+                        <TextBlock Margin="20,0,0,0" FontSize="18" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI">Filter 2</TextBlock>
+                        <TextBox Name="Filter2_Txt" Width="170" Height="25" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"></TextBox>
+                        <CheckBox HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI" Margin="25,1,0,0">Has This</CheckBox>
+                        <CheckBox HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI" Margin="10,1,0,0">Has That</CheckBox>
+                        <Button Click="Button_Click" Margin="50,0,0,0">Recherche</Button>
+                    </StackPanel>
+                </Border>
+            </ScrollViewer>
+
+            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness=".75" Margin="15" Background="White">
+                <DataGrid Name="Data_Grid_Client" MouseDoubleClick="Data_Grid_Client_MouseDoubleClick" Margin="15">
+                </DataGrid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

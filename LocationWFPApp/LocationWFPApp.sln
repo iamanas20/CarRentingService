@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocationWFPApp", "LocationWFPApp\LocationWFPApp.csproj", "{ACD95C79-6724-4B05-A5EA-B440DB9601FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACD95C79-6724-4B05-A5EA-B440DB9601FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD95C79-6724-4B05-A5EA-B440DB9601FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD95C79-6724-4B05-A5EA-B440DB9601FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD95C79-6724-4B05-A5EA-B440DB9601FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B89A926-E135-4919-BF5A-604A3FDF9275}
+	EndGlobalSection
+EndGlobal

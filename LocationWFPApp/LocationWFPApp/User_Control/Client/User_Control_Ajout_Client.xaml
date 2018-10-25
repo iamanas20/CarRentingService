@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="LocationWFPApp.User_Control_Client.User_Control_Ajout_Client" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:local="clr-namespace:LocationWFPApp.User_Control_Client"
+             mc:Ignorable="d" Loaded="UserControl_Loaded">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3.5*"></ColumnDefinition>
+                <ColumnDefinition Width="3.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel>
+                <DockPanel Grid.Column="0">
+                    <Border Margin="15,0,5,0" DockPanel.Dock="Top">
+                        <TextBlock Style="{StaticResource GroupBox_Title_TextBlock}">Client</TextBlock>
+                    </Border>
+                    <Border Margin="5,0,10,0" CornerRadius="5" Height="Auto" Background="White" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="2">
+                        <Grid Margin="10"  VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Type Client :</TextBlock>
+                            <ComboBox Name="ComboBox_Type_Client" SelectedValuePath="Content" Grid.Column="2" Grid.Row="0" >
+                                <ComboBoxItem>Entreprise</ComboBoxItem>
+                                <!--<ComboBoxItem>Entreprise</ComboBoxItem>-->
+                            </ComboBox>
+                            <TextBlock Name="txt" Grid.Column="0" Grid.Row="1" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Nom :</TextBlock>
+                            <TextBox Name="TextBox_Nom" Grid.Column="2" Grid.Row="1"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="2" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Prenom :</TextBlock>
+                            <TextBox Name="TextBox_Prenom" Grid.Column="2" Grid.Row="2" ></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="3" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Date de Naissance :</TextBlock>
+                            <DatePicker Name="DatePicker_Date_Naissance" Grid.Column="2" Grid.Row="3"></DatePicker>
+                            <TextBlock Grid.Column="0" Grid.Row="4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Lieu de Naissance :</TextBlock>
+                            <TextBox Name="TextBox_Lieu_Naissance" Grid.Column="2" Grid.Row="4"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="5" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Adresse :</TextBlock>
+                            <TextBox Name="TextBox_Adresse" Grid.Column="2" Grid.Row="5"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="6" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">N° Mobile :</TextBlock>
+                            <TextBox Name="TextBox_Num_Mobile" Grid.Column="2" Grid.Row="6"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="7" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">N° Telephone :</TextBlock>
+                            <TextBox Name="TextBox_Num_Telephone" Grid.Column="2" Grid.Row="7"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="8" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">N° Fax :</TextBlock>
+                            <TextBox Name="TextBox_Num_Fax" Grid.Column="2" Grid.Row="8"></TextBox>
+                        </Grid>
+                    </Border>
+                </DockPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <DockPanel>
+                    <Border Margin="15,0,5,0" DockPanel.Dock="Top">
+                        <TextBlock Style="{StaticResource GroupBox_Title_TextBlock}">Permis de Conduire</TextBlock>
+                    </Border>
+                    <Border Margin="10,0,5,0" CornerRadius="5" Background="White" Height="Auto" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="2">
+                        <Grid Margin="10"  VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Numero:</TextBlock>
+                            <TextBox Name="TextBox_Numero_Permis_Conduire" Grid.Column="2" Grid.Row="0"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="1" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Délivré Le:</TextBlock>
+                            <DatePicker Name="DatePicker_Permis_Conduire_Delivre_Le" Grid.Column="2" Grid.Row="1"></DatePicker>
+                            <TextBlock Grid.Column="0" Grid.Row="2" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Délivré A:</TextBlock>
+                            <TextBox Name="TextBox_Permis_Conduire_Delivre_A" Grid.Column="2" Grid.Row="2"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="3" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Validé Le:</TextBlock>
+                            <DatePicker Name="DatePicker_Permis_Conduire_Valide_Le" Grid.Column="2" Grid.Row="3"></DatePicker>
+                        </Grid>
+                    </Border>
+                </DockPanel>
+                <DockPanel Margin="0,5,0,0">
+                    <Border Margin="15,0,5,0" DockPanel.Dock="Top">
+                        <TextBlock Style="{StaticResource GroupBox_Title_TextBlock}">Pièce d'Identité</TextBlock>
+                    </Border>
+                    <Border Margin="10,0,5,0" CornerRadius="5" Height="Auto" Background="White" VerticalAlignment="Top" BorderBrush="LightGray" BorderThickness="2">
+                        <Grid Margin="10"  VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                                <RowDefinition Height="30"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Type Pièce d'Identité :</TextBlock>
+                            <ComboBox Name="ComboBox_Type_Piece_Identite" SelectedValuePath="Content" Grid.Column="2" Grid.Row="0">
+                                <ComboBoxItem>CIN</ComboBoxItem>
+                                <ComboBoxItem>Passport</ComboBoxItem>
+                                <!--<ComboBoxItem>Entreprise</ComboBoxItem>-->
+                            </ComboBox>
+                            <TextBlock Grid.Column="0" Grid.Row="1" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Numero :</TextBlock>
+                            <TextBox Name="TextBox_Piece_ID_Numero" Grid.Column="2" Grid.Row="1"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="2" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Nationalité :</TextBlock>
+                            <TextBox Name="TextBox_Piece_ID_Nationalite" Grid.Column="2" Grid.Row="2"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="3" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Délivré Le :</TextBlock>
+                            <DatePicker Name="DatePicker_Delivre_Le_Piece_ID" Grid.Column="2" Grid.Row="3"></DatePicker>
+                            <TextBlock Grid.Column="0" Grid.Row="4" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Délivré A :</TextBlock>
+                            <TextBox Name="TextBox_Delivre_A_Piece_ID" Grid.Column="2" Grid.Row="4"></TextBox>
+                            <TextBlock Grid.Column="0" Grid.Row="5" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center">Validé Le :</TextBlock>
+                            <DatePicker Name="DatePicker_Valide_Le_Piece_ID" Grid.Column="2" Grid.Row="5"></DatePicker>
+                        </Grid>
+                    </Border>
+                </DockPanel>
+            </StackPanel>
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Margin="0,20,0,0" HorizontalAlignment="Stretch" Height="60" VerticalAlignment="Bottom" Background="White">
+                <Button Name="Button_Ajouter" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Enregistrer" Click="Button_Ajouter_Click"></Button>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\annou\Source\Repos\LocationWFPApp\LocationWFPApp\obj\Debug\
+C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\LocationWFPApp\obj\Debug\
 LocationWFPApp
 none
 false
 DEBUG;TRACE
-C:\Users\annou\Source\Repos\LocationWFPApp\LocationWFPApp\App.xaml
+C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\LocationWFPApp\App.xaml
 6-947124903
 1377128700
-161392742416
-191849766040
+20610351225
+192111160070
 MainWindow.xaml;Style\Menu_Style.xaml;Style\Style.xaml;User_Control\Client\User_Control_Ajout_Client.xaml;User_Control\Client\User_Control_Client.xaml;User_Control\Login\User_Control_Login.xaml;
 
-False
+True
 

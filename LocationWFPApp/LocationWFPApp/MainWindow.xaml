@@ -8,10 +8,10 @@
         Title="MainWindow"  Loaded="Window_Loaded" WindowState="Maximized">
 
     <Grid>
-        <DockPanel x:Name="Main_Windows" Visibility="Collapsed" x:FieldModifier="public" >
+        <DockPanel x:Name="Main_Windows" Visibility="Visible" x:FieldModifier="public" >
             <Border DockPanel.Dock="Top" Height="50" Background="#444444" >
             </Border>
-            <TabControl x:Name="MyTabControl" SelectionChanged="MyTabControl_SelectionChanged" Grid.Row="1" TabStripPlacement="Left" Style="{DynamicResource Menu_Style}">
+            <TabControl x:Name="MyTabControl" SelectionChanged="MyTabControl_SelectionChanged" Grid.Row="1" TabStripPlacement="Left" Style="{DynamicResource Menu_Style}" MouseDown="MyTabControl_MouseDown">
                 <customs:CustomTabItem Header="Tableau de bord" Tag="Tableau_De_Bord" VerticalAlignment="Top" Height="59.627" Template="{DynamicResource CustomTabItemControlTemplate1}" IconData="F1M21.3,17L46.7,17C47.418,17,48,17.5821,48,18.3L48,24.7C48,25.418,47.418,26,46.7,26L31.3,26C30.0298,26,29,27.0298,29,28.3L29,49.7C29,50.418,28.418,51,27.7,51L21.3,51C20.582,51,20,50.418,20,49.7L20,18.3C20,17.582,20.582,17,21.3,17z M33.3,29L54.7,29C55.418,29,56,29.582,56,30.3L56,57.7C56,58.418,55.418,59,54.7,59L33.3,59C32.582,59,32,58.418,32,57.7L32,30.3C32,29.582,32.582,29,33.3,29z" Foreground="#FF5D5D5D">
                     <Grid Background="#FFE5E5E5"/>
                     <customs:CustomTabItem.listBoxItems>
@@ -37,6 +37,6 @@
                 </customs:CustomTabItem>
             </TabControl>
         </DockPanel>
-        <User_Control:User_Control_Login HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="UC_Login" />
+        <!--<User_Control:User_Control_Login HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="UC_Login" />-->
     </Grid>
 </Window>

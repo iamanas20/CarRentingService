@@ -16,5 +16,9 @@ namespace LocationWFPApp
     public partial class App : Application
     {
         internal static OleDbConnection Cnx;
+
+
+        static bool firstTake = true;
+        internal static bool FirstTake { get => firstTake; set => firstTake = value; }
     }
 }

@@ -31,13 +31,13 @@
                     <StackPanel Grid.Row="1" Orientation="Horizontal" Height="30" Margin="0, 45, 0, 0">
                         <TextBlock FontFamily="Segoe UI" Foreground="#a1a1a1" Panel.ZIndex="1" Margin="10,0,-55,0" VerticalAlignment="Center">Username</TextBlock>
                         <Border Width="1" Height="15" Background="#a1a1a1" Margin="60,0,0,0" Panel.ZIndex="1"></Border>
-                        <TextBox Name="Username_Txt" Padding="80,6,0,0" Margin="-70, 0, 0, 0" Width="250" BorderThickness="0,0,0,2"  BorderBrush="#39adae" Foreground="White" Background="#FF252525"></TextBox>
+                        <TextBox Name="Username_Txt" Text="iamanas22" Padding="80,6,0,0" Margin="-70, 0, 0, 0" Width="250" BorderThickness="0,0,0,2"  BorderBrush="#39adae" Foreground="White" Background="#FF252525"></TextBox>
                     </StackPanel>
                     
                     <StackPanel Grid.Row="2" Orientation="Horizontal" Height="30" Margin="0, 15, 0, 0">
                         <TextBlock FontFamily="Segoe UI" Foreground="#a1a1a1" Panel.ZIndex="1" Margin="10,0,-51,0" VerticalAlignment="Center">Password</TextBlock>
                         <Border Width="1" Height="15" Background="#a1a1a1" Margin="60,0,0,0" Panel.ZIndex="1"></Border>
-                        <PasswordBox Name="Password_Pbox" Padding="80,6,0,0" Margin="-70, 0, 0, 0" Width="250" BorderThickness="0,0,0,2"  BorderBrush="#39adae" Foreground="White" Background="#FF252525"></PasswordBox>
+                        <PasswordBox Name="Password_Pbox" Password="tlsslm10" Padding="80,6,0,0" Margin="-70, 0, 0, 0" Width="250" BorderThickness="0,0,0,2"  BorderBrush="#39adae" Foreground="White" Background="#FF252525"></PasswordBox>
                     </StackPanel>
                     <Button Name="Login_Button" Click="Login_Button_Click" Grid.Row="3" HorizontalAlignment="Center" Margin="0,20,0,0">Login</Button>
                 </Grid>

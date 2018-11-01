@@ -96,6 +96,11 @@ namespace LocationWFPApp.User_Control_Client
             if (isUpdate)
             {
                 client.Update(_id);
+
+                User_Control_Clients user_Control_Clients = new User_Control_Clients();
+
+                ((MainWindow)Application.Current.MainWindow).ContentGrid.Children.Clear();
+                ((MainWindow)Application.Current.MainWindow).ContentGrid.Children.Add(user_Control_Clients);
             }
             else
             {

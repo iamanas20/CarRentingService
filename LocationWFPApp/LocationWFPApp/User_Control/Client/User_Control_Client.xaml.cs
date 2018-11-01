@@ -50,6 +50,7 @@ namespace LocationWFPApp
             if (Data_Grid_Client.CurrentItem != null)
             {
                 User_Control_Ajout_Client user_Control_Clients = new User_Control_Ajout_Client(Convert.ToInt16((Data_Grid_Client.CurrentItem as DataRowView)["id"].ToString()));
+
                 ((MainWindow)Application.Current.MainWindow).ContentGrid.Children.Clear();
                 ((MainWindow)Application.Current.MainWindow).ContentGrid.Children.Add(user_Control_Clients);
             }

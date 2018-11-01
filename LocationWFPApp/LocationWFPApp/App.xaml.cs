@@ -19,6 +19,8 @@ namespace LocationWFPApp
 
 
         static bool firstTake = true;
+        private static bool s_failedToUpdate;
         internal static bool FirstTake { get => firstTake; set => firstTake = value; }
+        public static bool FailedToUpdate { get => s_failedToUpdate; set => s_failedToUpdate = value; }
     }
 }

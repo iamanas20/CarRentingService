@@ -30,7 +30,6 @@ namespace LocationWFPApp.User_Control_Client
         DataTable dataTable;
         public User_Control_Ajout_Client(int id)
         {
-
             InitializeComponent();
             try
             {
@@ -92,10 +91,11 @@ namespace LocationWFPApp.User_Control_Client
                         TextBox_Piece_ID_Nationalite.Text,
                          Outils.Outils._IsDate(DatePicker_Permis_Conduire_Valide_Le.Text),
                         TextBox_Delivre_A_Piece_ID.Text,
-                         Outils.Outils._IsDate(DatePicker_Valide_Le_Piece_ID.Text)));
+                         Outils.Outils._IsDate(DatePicker_Valide_Le_Piece_ID.Text)),
+                    _id);
             if (isUpdate)
             {
-                client.Update(_id);
+                client.Update();
 
                 User_Control_Clients user_Control_Clients = new User_Control_Clients();
 

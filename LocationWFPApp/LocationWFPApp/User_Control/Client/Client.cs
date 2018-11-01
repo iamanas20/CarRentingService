@@ -26,7 +26,8 @@ namespace LocationWFPApp.Models
             string num_Fax,
             string type,
             Permis_De_Conduire permis_De_Conduire,
-            Pieces_ID pieces_ID)
+            Pieces_ID pieces_ID,
+            int id = 0) //null parameter
         {
             try
             {
@@ -41,6 +42,7 @@ namespace LocationWFPApp.Models
                 Type = type;
                 Permis_De_Conduire = permis_De_Conduire;
                 Pieces_ID = pieces_ID;
+                ID = id;
             }
             catch (Exception ex)
             {
@@ -102,7 +104,7 @@ namespace LocationWFPApp.Models
 
         private int Get_ID() => int.Parse(Outils.Outils.GetDataSet("SELECT IIF(ISNULL(MAX(ID)), 0, MAX(ID)) + 1 AS ID FROM Client").Rows[0]["ID"].ToString());
 
-        public void Update(int id)
+        public void Update()
         {
             Outils.Outils.Execute_Query("Update Client SET" +
                 " Type_Client = '" + Type + "'," +
@@ -114,14 +116,14 @@ namespace LocationWFPApp.Models
                 " Num_Mobile = '" + Num_Mobile + "'," +
                 " Num_Telephone = '" + Num_Telephone + "'," +
                 " Num_Fax = '" + Num_Fax + "'" +
-                " WHERE ID = " + id);
+                " WHERE ID = " + ID);
 
             Outils.Outils.Execute_Query("Update Permis_De_Conduire SET" +
                 " Num = '" + Permis_De_Conduire.Num + "'," +
                 " Delivre_Le = " + Outils.Outils._Date_Print(Permis_De_Conduire.Delivre_Le) + "," +
                 " Delivre_A = '" + Permis_De_Conduire.Delivre_A + "'," +
                 " Valide_Le = " + Outils.Outils._Date_Print(Permis_De_Conduire.Valide_Le) +
-                " WHERE Client = " + id);
+                " WHERE Client = " + ID);
 
             Outils.Outils.Execute_Query("Update Pieces_ID SET" +
                 " Num_Piece_ID = '" + Pieces_ID.Num + "'," +
@@ -130,7 +132,7 @@ namespace LocationWFPApp.Models
                 " Delivre_Le_Piece_ID = " + Outils.Outils._Date_Print(Pieces_ID.Delivre_Le) + "," +
                 " Delivre_A_Piece_ID = '" + Pieces_ID.Delivre_A + "'," +
                 " Valide_Le_Piece_ID = " + Outils.Outils._Date_Print(Pieces_ID.Valide_Le) +
-                " WHERE Client = " + id);
+                " WHERE Client = " + ID);
         }
     }
 }

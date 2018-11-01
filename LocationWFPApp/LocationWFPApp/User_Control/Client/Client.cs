@@ -65,7 +65,7 @@ namespace LocationWFPApp.Models
         public void Insert()
         {
             int id = Get_ID();
-            Outils.Outils.Execute_Query("INSERT INTO Client (ID, Type, Nom, Prenom, Date_Naissance, Lieu_Naissance, Adresse, Num_Mobile, Num_Telephone, Num_Fax) " +
+            Outils.Outils.Execute_Query("INSERT INTO Client (ID, Type_Client, Nom, Prenom, Date_Naissance, Lieu_Naissance, Adresse, Num_Mobile, Num_Telephone, Num_Fax) " +
                       "VALUES (" + id + "," +
                       "'" + Type + "'," +
                       "'" + Nom + "'," +
@@ -79,7 +79,7 @@ namespace LocationWFPApp.Models
 
             // insert the other stuff
 
-            Outils.Outils.Execute_Query("INSERT INTO Pieces_ID (Num, Type, Nationalite, Delivre_Le, Delivre_A, Valide_Le, Client) " +
+            Outils.Outils.Execute_Query("INSERT INTO Pieces_ID (Num_Piece_ID, Type, Nationalite, Delivre_Le_Piece_ID, Delivre_A_Piece_ID, Valide_Le_Piece_ID, Client) " +
                       "VALUES ('" + Pieces_ID.Num + "'," +
                       "'" + Pieces_ID.Type + "'," +
                       "'" + Pieces_ID.Nationalite + "'," +
@@ -102,19 +102,35 @@ namespace LocationWFPApp.Models
 
         private int Get_ID() => int.Parse(Outils.Outils.GetDataSet("SELECT IIF(ISNULL(MAX(ID)), 0, MAX(ID)) + 1 AS ID FROM Client").Rows[0]["ID"].ToString());
 
-        public void Update()
+        public void Update(int id)
         {
             Outils.Outils.Execute_Query("Update Client SET" +
-                " Type = '" + Type + "'," +
+                " Type_Client = '" + Type + "'," +
                 " Nom = '" + Nom + "'," +
                 " Prenom = '" + Prenom + "'," +
-                " Date_Naissance = '" + Date_Naissance + "'," +
+                " Date_Naissance = " + Outils.Outils._Date_Print(Date_Naissance) + "," +
                 " Lieu_Naissance = '" + Lieu_Naissance + "'," +
                 " Adresse = '" + Adresse + "'," +
                 " Num_Mobile = '" + Num_Mobile + "'," +
                 " Num_Telephone = '" + Num_Telephone + "'," +
                 " Num_Fax = '" + Num_Fax + "'" +
-                " WHERE ID = " + ID);
+                " WHERE ID = " + id);
+
+            Outils.Outils.Execute_Query("Update Permis_De_Conduire SET" +
+                " Num = '" + Permis_De_Conduire.Num + "'," +
+                " Delivre_Le = " + Outils.Outils._Date_Print(Permis_De_Conduire.Delivre_Le) + "," +
+                " Delivre_A = '" + Permis_De_Conduire.Delivre_A + "'," +
+                " Valide_Le = " + Outils.Outils._Date_Print(Permis_De_Conduire.Valide_Le) +
+                " WHERE Client = " + id);
+
+            Outils.Outils.Execute_Query("Update Pieces_ID SET" +
+                " Num_Piece_ID = '" + Pieces_ID.Num + "'," +
+                " Type = '" + Pieces_ID.Type + "'," +
+                " Nationalite = '" + Pieces_ID.Nationalite + "'," +
+                " Delivre_Le_Piece_ID = " + Outils.Outils._Date_Print(Pieces_ID.Delivre_Le) + "," +
+                " Delivre_A_Piece_ID = '" + Pieces_ID.Delivre_A + "'," +
+                " Valide_Le_Piece_ID = " + Outils.Outils._Date_Print(Pieces_ID.Valide_Le) +
+                " WHERE Client = " + id);
         }
     }
 }

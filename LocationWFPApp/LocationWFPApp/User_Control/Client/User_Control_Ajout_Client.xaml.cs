@@ -97,6 +97,8 @@ namespace LocationWFPApp.User_Control_Client
             {
                 client.Update();
 
+                MessageBox.Show("Successfully updated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 User_Control_Clients user_Control_Clients = new User_Control_Clients();
 
                 ((MainWindow)Application.Current.MainWindow).ContentGrid.Children.Clear();

@@ -8,7 +8,7 @@
         Title="MainWindow"  Loaded="Window_Loaded" WindowState="Maximized">
 
     <Grid>
-        <DockPanel x:Name="Main_Windows" Visibility="Visible" x:FieldModifier="public" >
+        <DockPanel x:Name="Main_Windows" Visibility="Collapsed" x:FieldModifier="public" >
             <Border DockPanel.Dock="Top" Height="50" Background="#444444" >
             </Border>
             <TabControl x:Name="MyTabControl" SelectionChanged="MyTabControl_SelectionChanged" Grid.Row="1" TabStripPlacement="Left" Style="{DynamicResource Menu_Style}" MouseDown="MyTabControl_MouseDown">
@@ -37,6 +37,6 @@
                 </customs:CustomTabItem>
             </TabControl>
         </DockPanel>
-        <!--<User_Control:User_Control_Login HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="UC_Login" />-->
+        <User_Control:User_Control_Login HorizontalAlignment="Stretch" VerticalAlignment="Stretch" x:Name="UC_Login" />
     </Grid>
 </Window>

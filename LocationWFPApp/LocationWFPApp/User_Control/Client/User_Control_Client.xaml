@@ -17,19 +17,19 @@
             <ScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <Border Background="White" Margin="15,0,15,0">
                     <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock Margin="0,0,0,0" FontSize="18" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI">Filter 1</TextBlock>
+                        <TextBlock Margin="0,0,0,0" FontSize="18" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Google Sans">Filter 1</TextBlock>
                         <TextBox Name="Filter1_Txt" Width="170" Height="25" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"></TextBox>
-                        <TextBlock Margin="20,0,0,0" FontSize="18" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI">Filter 2</TextBlock>
+                        <TextBlock Margin="20,0,0,0" FontSize="18" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Google Sans">Filter 2</TextBlock>
                         <TextBox Name="Filter2_Txt" Width="170" Height="25" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"></TextBox>
-                        <CheckBox HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI" Margin="25,1,0,0">Has This</CheckBox>
-                        <CheckBox HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Segoe UI" Margin="10,1,0,0">Has That</CheckBox>
+                        <CheckBox HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Google Sans" Margin="25,1,0,0">Has This</CheckBox>
+                        <CheckBox HorizontalAlignment="Left" FontSize="13" VerticalAlignment="Center" Foreground="#FF5D5D5D" FontFamily="Google Sans" Margin="10,1,0,0">Has That</CheckBox>
                         <Button Click="Button_Click" Margin="50,0,0,0">Recherche</Button>
                     </StackPanel>
                 </Border>
             </ScrollViewer>
 
             <Border Grid.Row="1" BorderBrush="Gray" BorderThickness=".75" Margin="15" Background="White">
-                <DataGrid Name="Data_Grid_Client" MouseDoubleClick="Data_Grid_Client_MouseDoubleClick" Margin="15">
+                <DataGrid Name="Data_Grid_Client" IsReadOnly="True" MouseDoubleClick="Data_Grid_Client_MouseDoubleClick" Margin="15">
                 </DataGrid>
             </Border>
         </Grid>

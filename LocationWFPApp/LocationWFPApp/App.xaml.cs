@@ -17,10 +17,11 @@ namespace LocationWFPApp
     {
         internal static OleDbConnection Cnx;
 
-
-        static bool firstTake = true;
         private static bool s_failedToUpdate;
-        internal static bool FirstTake { get => firstTake; set => firstTake = value; }
+        private static List<string> history;
+
         public static bool FailedToUpdate { get => s_failedToUpdate; set => s_failedToUpdate = value; }
+
+        public static List<String> History { get => history; set => history = value; }
     }
 }

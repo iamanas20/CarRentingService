@@ -64,9 +64,9 @@ namespace LocationWFPApp.Models
         public Permis_De_Conduire Permis_De_Conduire { get; set; }
         public Pieces_ID Pieces_ID { get; set; }
 
-        public void Insert()
+        public async void Insert()
         {
-            int id = Get_ID();
+            int id = await Get_ID();
             Outils.Outils.Execute_Query("INSERT INTO Client (ID, Type_Client, Nom, Prenom, Date_Naissance, Lieu_Naissance, Adresse, Num_Mobile, Num_Telephone, Num_Fax) " +
                       "VALUES (" + id + "," +
                       "'" + Type + "'," +
@@ -102,7 +102,7 @@ namespace LocationWFPApp.Models
         // create a function that gets the max of the ID in the clients db and increment it
         // think about when you have a null value of max(ID)
 
-        private int Get_ID() => int.Parse(Outils.Outils.GetDataSet("SELECT IIF(ISNULL(MAX(ID)), 0, MAX(ID)) + 1 AS ID FROM Client").Rows[0]["ID"].ToString());
+        private async Task<int> Get_ID() => int.Parse((await Outils.Outils.GetDataSet("SELECT IIF(ISNULL(MAX(ID)), 0, MAX(ID)) + 1 AS ID FROM Client")).Rows[0]["ID"].ToString());
 
         public void Update()
         {

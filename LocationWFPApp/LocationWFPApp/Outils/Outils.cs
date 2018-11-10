@@ -25,13 +25,12 @@ namespace LocationWFPApp.Outils
                 App.Cnx.Open();
         }
 
-        public static DataTable GetDataSet(string query)
-        {
+        public static async Task<DataTable> GetDataSet(string query) => await Task.Run(() => {
             DataTable dataTable = new DataTable();
             OleDbDataAdapter adapter = new OleDbDataAdapter(query, App.Cnx);
             adapter.Fill(dataTable);
             return dataTable;
-        }
+        });
 
         public static bool Execute_Query(string query)
         {

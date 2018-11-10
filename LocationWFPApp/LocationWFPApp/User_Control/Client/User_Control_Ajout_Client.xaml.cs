@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using LocationWFPApp.Models;
 using LocationWFPApp.User_Control.Client;
 using System.Data;
 
@@ -27,36 +26,59 @@ namespace LocationWFPApp.User_Control_Client
     {
         bool isUpdate;
         int _id;
-        DataTable dataTable;
-        public User_Control_Ajout_Client(int id)
+        DataTable dataTableClient;
+        DataTable dataTablePermis;
+        DataTable dataTablePiece;
+
+        public User_Control_Ajout_Client()
         {
             InitializeComponent();
+            if (App.History == null)
+            {
+                App.History = new List<string>();
+            }
+            App.History.Add("AjoutClient");
+        }
+
+        public async void Fill_For_Update(int id)
+        {
             try
             {
-                dataTable = new DataTable();
-                dataTable = Outils.Outils.GetDataSet("SELECT * FROM (" +
-                    "(Client INNER JOIN Permis_De_Conduire ON Client.ID = Permis_De_Conduire.Client )" +
-                    "INNER JOIN Pieces_ID ON Client.ID = Pieces_ID.Client)" +
-                    "WHERE Client.ID = " + id);
-                TextBox_Nom.Text = dataTable.Rows[0]["Nom"].ToString();
-                TextBox_Prenom.Text = dataTable.Rows[0]["Prenom"].ToString();
-                DatePicker_Date_Naissance.Text = dataTable.Rows[0]["Date_Naissance"].ToString();
-                TextBox_Adresse.Text = dataTable.Rows[0]["Adresse"].ToString();
-                TextBox_Lieu_Naissance.Text = dataTable.Rows[0]["Lieu_Naissance"].ToString();
-                TextBox_Num_Mobile.Text = dataTable.Rows[0]["Num_Mobile"].ToString();
-                TextBox_Num_Telephone.Text = dataTable.Rows[0]["Num_Telephone"].ToString();
-                TextBox_Num_Fax.Text = dataTable.Rows[0]["Num_Fax"].ToString();
-                ComboBox_Type_Client.SelectedItem = dataTable.Rows[0]["Type_Client"].ToString();
-                TextBox_Numero_Permis_Conduire.Text = dataTable.Rows[0]["Num"].ToString();
-                DatePicker_Permis_Conduire_Delivre_Le.Text = dataTable.Rows[0]["Delivre_Le"].ToString();
-                TextBox_Permis_Conduire_Delivre_A.Text = dataTable.Rows[0]["Delivre_A"].ToString();
-                DatePicker_Permis_Conduire_Valide_Le.Text = dataTable.Rows[0]["Valide_Le"].ToString();
-                ComboBox_Type_Piece_Identite.Text = dataTable.Rows[0]["Type"].ToString();
-                TextBox_Piece_ID_Numero.Text = dataTable.Rows[0]["Num_Piece_ID"].ToString();
-                TextBox_Piece_ID_Nationalite.Text = dataTable.Rows[0]["Nationalite"].ToString();
-                DatePicker_Delivre_Le_Piece_ID.Text = dataTable.Rows[0]["Delivre_Le_Piece_ID"].ToString();
-                TextBox_Delivre_A_Piece_ID.Text = dataTable.Rows[0]["Delivre_A_Piece_ID"].ToString();
-                DatePicker_Valide_Le_Piece_ID.Text = dataTable.Rows[0]["Valide_Le_Piece_ID"].ToString();
+                dataTableClient = new DataTable();
+                dataTableClient = await Outils.Outils.GetDataSet("SELECT * FROM Client WHERE ID = " + id);
+                dataTablePermis = await Outils.Outils.GetDataSet("SELECT * FROM Permis_De_Conduire WHERE Client = " + id);
+                dataTablePiece = await Outils.Outils.GetDataSet("SELECT * FROM Pieces_ID WHERE Client = " + id);
+
+                if (dataTableClient.Rows.Count != 0)
+                {
+                    TextBox_Nom.Text = dataTableClient.Rows[0]["Nom"].ToString();
+                    TextBox_Prenom.Text = dataTableClient.Rows[0]["Prenom"].ToString();
+                    DatePicker_Date_Naissance.Text = dataTableClient.Rows[0]["Date_Naissance"].ToString();
+                    TextBox_Adresse.Text = dataTableClient.Rows[0]["Adresse"].ToString();
+                    TextBox_Lieu_Naissance.Text = dataTableClient.Rows[0]["Lieu_Naissance"].ToString();
+                    TextBox_Num_Mobile.Text = dataTableClient.Rows[0]["Num_Mobile"].ToString();
+                    TextBox_Num_Telephone.Text = dataTableClient.Rows[0]["Num_Telephone"].ToString();
+                    TextBox_Num_Fax.Text = dataTableClient.Rows[0]["Num_Fax"].ToString();
+                    ComboBox_Type_Client.SelectedItem = dataTableClient.Rows[0]["Type_Client"].ToString();
+                }
+
+                if (dataTablePermis.Rows.Count != 0)
+                {
+                    TextBox_Numero_Permis_Conduire.Text = dataTablePermis.Rows[0]["Num"].ToString();
+                    DatePicker_Permis_Conduire_Delivre_Le.Text = dataTablePermis.Rows[0]["Delivre_Le"].ToString();
+                    TextBox_Permis_Conduire_Delivre_A.Text = dataTablePermis.Rows[0]["Delivre_A"].ToString();
+                    DatePicker_Permis_Conduire_Valide_Le.Text = dataTablePermis.Rows[0]["Valide_Le"].ToString();
+                }
+
+                if (dataTablePiece.Rows.Count != 0)
+                {
+                    ComboBox_Type_Piece_Identite.Text = dataTablePiece.Rows[0]["Type"].ToString();
+                    TextBox_Piece_ID_Numero.Text = dataTablePiece.Rows[0]["Num_Piece_ID"].ToString();
+                    TextBox_Piece_ID_Nationalite.Text = dataTablePiece.Rows[0]["Nationalite"].ToString();
+                    DatePicker_Delivre_Le_Piece_ID.Text = dataTablePiece.Rows[0]["Delivre_Le_Piece_ID"].ToString();
+                    TextBox_Delivre_A_Piece_ID.Text = dataTablePiece.Rows[0]["Delivre_A_Piece_ID"].ToString();
+                    DatePicker_Valide_Le_Piece_ID.Text = dataTablePiece.Rows[0]["Valide_Le_Piece_ID"].ToString();
+                }
                 _id = id;
                 isUpdate = true;
             }
@@ -66,33 +88,28 @@ namespace LocationWFPApp.User_Control_Client
             }
         }
 
-        public User_Control_Ajout_Client()
-        {
-            InitializeComponent();
-        }
-
         private void Button_Ajouter_Click(object sender, RoutedEventArgs e)
         {
-                Models.Client client = new Models.Client(TextBox_Nom.Text,
-                    TextBox_Prenom.Text,
-                    Outils.Outils._IsDate(DatePicker_Date_Naissance.Text),
-                    TextBox_Lieu_Naissance.Text,
-                    TextBox_Adresse.Text,
-                    TextBox_Num_Mobile.Text,
-                    TextBox_Num_Telephone.Text,
-                    TextBox_Num_Fax.Text,
-                    ComboBox_Type_Client.SelectedValue.ToString(),
-                    new Permis_De_Conduire(TextBox_Numero_Permis_Conduire.Text,
-                         Outils.Outils._IsDate(DatePicker_Permis_Conduire_Delivre_Le.Text),
-                        TextBox_Permis_Conduire_Delivre_A.Text,
-                         Outils.Outils._IsDate(DatePicker_Permis_Conduire_Valide_Le.Text)),
-                    new Pieces_ID(TextBox_Piece_ID_Numero.Text,
-                        ComboBox_Type_Piece_Identite.SelectedValue.ToString(),
-                        TextBox_Piece_ID_Nationalite.Text,
-                         Outils.Outils._IsDate(DatePicker_Permis_Conduire_Valide_Le.Text),
-                        TextBox_Delivre_A_Piece_ID.Text,
-                         Outils.Outils._IsDate(DatePicker_Valide_Le_Piece_ID.Text)),
-                    _id);
+            Models.Client client = new Models.Client(TextBox_Nom.Text,
+                TextBox_Prenom.Text,
+                Outils.Outils._IsDate(DatePicker_Date_Naissance.Text),
+                TextBox_Lieu_Naissance.Text,
+                TextBox_Adresse.Text,
+                TextBox_Num_Mobile.Text,
+                TextBox_Num_Telephone.Text,
+                TextBox_Num_Fax.Text,
+                ComboBox_Type_Client.SelectedValue.ToString(),
+                new Permis_De_Conduire(TextBox_Numero_Permis_Conduire.Text,
+                     Outils.Outils._IsDate(DatePicker_Permis_Conduire_Delivre_Le.Text),
+                    TextBox_Permis_Conduire_Delivre_A.Text,
+                     Outils.Outils._IsDate(DatePicker_Permis_Conduire_Valide_Le.Text)),
+                new Pieces_ID(TextBox_Piece_ID_Numero.Text,
+                    ComboBox_Type_Piece_Identite.SelectedValue.ToString(),
+                    TextBox_Piece_ID_Nationalite.Text,
+                     Outils.Outils._IsDate(DatePicker_Permis_Conduire_Valide_Le.Text),
+                    TextBox_Delivre_A_Piece_ID.Text,
+                     Outils.Outils._IsDate(DatePicker_Valide_Le_Piece_ID.Text)),
+                _id);
             if (isUpdate)
             {
                 client.Update();
@@ -114,8 +131,6 @@ namespace LocationWFPApp.User_Control_Client
         {
             ComboBox_Type_Client.SelectedIndex = 0;
             ComboBox_Type_Piece_Identite.SelectedIndex = 0;
-
-            App.FirstTake = true;
         }
     }
 }

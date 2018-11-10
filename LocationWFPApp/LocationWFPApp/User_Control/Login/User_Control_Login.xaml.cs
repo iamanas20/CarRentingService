@@ -26,9 +26,9 @@ namespace LocationWFPApp.User_Control
             InitializeComponent();
         }
 
-        private void Login_Button_Click(object sender, RoutedEventArgs e)
+        private async void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dt_user = Outils.Outils.GetDataSet("SELECT * FROM [User] WHERE Login = \'" + Username_Txt.Text.Replace("'", "''") + "\' AND Password = \'" + Password_Pbox.Password.Replace("'", "''") + "\'");
+            DataTable dt_user = await Outils.Outils.GetDataSet("SELECT * FROM [User] WHERE Login = \'" + Username_Txt.Text.Replace("'", "''") + "\' AND Password = \'" + Password_Pbox.Password.Replace("'", "''") + "\'");
 
             if (dt_user.Rows.Count != 0)
             {

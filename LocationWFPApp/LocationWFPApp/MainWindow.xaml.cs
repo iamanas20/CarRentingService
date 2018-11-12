@@ -44,14 +44,14 @@ namespace LocationWFPApp
         {
             ContentGrid.Children.Clear();
             ContentGrid.Children.Add((UserControl)User_Controls_HashSet["Client_Ajout"]);
-            Sous_Menu_Ajout_Client.IsSelected = false;
+            //Sous_Menu_Ajout_Client.IsSelected = false;
         }
 
         private void Sous_Menu_Clients_Selected(object sender, RoutedEventArgs e)
         {
             ContentGrid.Children.Clear();
             ContentGrid.Children.Add((UserControl)User_Controls_HashSet["Client"]);
-            Sous_Menu_Clients.IsSelected = false;
+            //Sous_Menu_Clients.IsSelected = false;
         }
 
         private void MyTabControl_MouseDown(object sender, MouseButtonEventArgs e)

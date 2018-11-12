@@ -49,8 +49,7 @@ namespace LocationWFPApp.Models
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-
+        
         public int ID { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
@@ -85,17 +84,17 @@ namespace LocationWFPApp.Models
                       "VALUES ('" + Pieces_ID.Num + "'," +
                       "'" + Pieces_ID.Type + "'," +
                       "'" + Pieces_ID.Nationalite + "'," +
-                      "'" + Outils.Outils._Date_Print(Pieces_ID.Delivre_Le) + "'," +
+                      Outils.Outils._Date_Print(Pieces_ID.Delivre_Le) + "," +
                       "'" + Pieces_ID.Delivre_A + "'," +
-                      "'" + Outils.Outils._Date_Print(Pieces_ID.Valide_Le) + "'," +
+                      Outils.Outils._Date_Print(Pieces_ID.Valide_Le) + "," +
                       id + ")");
 
 
             Outils.Outils.Execute_Query("INSERT INTO Permis_De_Conduire (Num, Delivre_Le, Delivre_A, Valide_Le, Client) " +
                       "VALUES ('" + Permis_De_Conduire.Num + "'," +
-                      "'" + Outils.Outils._Date_Print(Permis_De_Conduire.Delivre_Le) + "'," +
+                      Outils.Outils._Date_Print(Permis_De_Conduire.Delivre_Le) + "," +
                       " '" + Permis_De_Conduire.Delivre_A + "'," +
-                      " '" + Outils.Outils._Date_Print(Permis_De_Conduire.Valide_Le) + "'," +
+                      Outils.Outils._Date_Print(Permis_De_Conduire.Valide_Le) + "," +
                       " '" + id + "')");
         }
 

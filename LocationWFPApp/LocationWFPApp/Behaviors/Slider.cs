@@ -21,7 +21,7 @@ namespace LocationWFPApp.Behaviors
             get { return (ListBox)GetValue(listBoxProperty); }
             set { SetValue(listBoxProperty, value); }
         }
-
+        
         // Using a DependencyProperty as the backing store for listBox.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty listBoxProperty =
             DependencyProperty.Register("listBox", typeof(ListBox), typeof(Slider), new PropertyMetadata(null));

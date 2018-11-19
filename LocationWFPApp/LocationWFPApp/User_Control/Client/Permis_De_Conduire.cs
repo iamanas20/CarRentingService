@@ -26,27 +26,6 @@ namespace LocationWFPApp.User_Control.Client
         public string Delivre_A { get; set; }
         public string Valide_Le { get; set; }
         public int Client { get; set; }
-
-        //public void Insert()
-        //{
-        //    Outils.Outils.Execute_Query("INSERT INTO Client (Num, Delivre_Le, Delivre_A, Valide_Le, Client) " +
-        //              "VALUES ('" + Num + "'," +
-        //              "'" + Delivre_Le + "'," +
-        //              " '" + Delivre_A + "'," +
-        //              " '" + Valide_Le + "'," +
-        //              " '" + Client + "')");
-        //}
-
-        //public void Update()
-        //{
-        //    Outils.Outils.Execute_Query("Update Client SET" +
-        //        " Num = '" + Num + "'," +
-        //        " Delivre_Le = '" + Delivre_Le + "'," +
-        //        " Delivre_A = '" + Delivre_A + "'," +
-        //        " Valide_Le = '" + Valide_Le + "'," +
-        //        " Client = '" + Client + "'," +
-        //        " WHERE ID = " + ID);
-        //}
     }
 
 }

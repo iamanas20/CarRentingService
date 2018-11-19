@@ -67,7 +67,6 @@
     <Compile Include="User_Control\Client\Client.cs" />
     <Compile Include="Models\Connection.cs" />
     <Compile Include="Outils\Outils.cs" />
-    <Compile Include="User_Control\Client\Manipulation_BD_Client.cs" />
     <Compile Include="User_Control\Client\Permis_De_Conduire.cs" />
     <Compile Include="User_Control\Client\Pieces_ID.cs" />
     <Compile Include="User_Control\Client\User_Control_Ajout_Client.xaml.cs">
@@ -78,6 +77,9 @@
     </Compile>
     <Compile Include="User_Control\Login\User_Control_Login.xaml.cs">
       <DependentUpon>User_Control_Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User_Control\Voiture\User_Control_Voiture.xaml.cs">
+      <DependentUpon>User_Control_Voiture.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User_Control\Login\User_Control_Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Control\Voiture\User_Control_Voiture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,5 +162,6 @@
   <ItemGroup>
     <Resource Include="Config\Config.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

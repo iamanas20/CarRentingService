@@ -306,7 +306,6 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-
     
     <Grid>
         <Grid>
@@ -329,7 +328,7 @@
             </ScrollViewer>
 
             <Border Grid.Row="1" BorderBrush="Gray" BorderThickness=".75" Margin="15" Background="White">
-                <DataGrid Name="Data_Grid_Voiture" ItemsSource="{Binding}" IsReadOnly="True" MouseDoubleClick="Data_Grid_Client_MouseDoubleClick" Margin="15" Template="{DynamicResource DataGridControlTemplate1}">
+                <DataGrid Name="Data_Grid_Voiture" ItemsSource="{Binding}" IsReadOnly="True" MouseDoubleClick="Data_Grid_Voiture_MouseDoubleClick" Margin="15" Template="{DynamicResource DataGridControlTemplate1}">
                 </DataGrid>
             </Border>
         </Grid>

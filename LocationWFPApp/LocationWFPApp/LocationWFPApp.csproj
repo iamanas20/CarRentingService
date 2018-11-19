@@ -78,9 +78,13 @@
     <Compile Include="User_Control\Login\User_Control_Login.xaml.cs">
       <DependentUpon>User_Control_Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Control\Voiture\User_Control_Ajout_Voiture.xaml.cs">
+      <DependentUpon>User_Control_Ajout_Voiture.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User_Control\Voiture\User_Control_Voiture.xaml.cs">
       <DependentUpon>User_Control_Voiture.xaml</DependentUpon>
     </Compile>
+    <Compile Include="User_Control\Voiture\Voiture.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="User_Control\Login\User_Control_Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User_Control\Voiture\User_Control_Ajout_Voiture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

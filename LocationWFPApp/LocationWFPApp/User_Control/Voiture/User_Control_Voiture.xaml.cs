@@ -44,8 +44,13 @@ namespace LocationWFPApp.User_Control.Voiture
         private async void LoadTheDataGrid()
         {
             // TODO continue on the voiture shit!
-            Data_Grid_Voiture.ItemsSource = (await Outils.Outils.GetDataSet(@"SELECT ID, Disponibilite, Num_Immatriculation, Num_WW, Date_Mise_En_Circulation, Marque, Type, Genre, Type_Carburant, Num_Chassis, Couleur, Prix_TTC, Kilometrage FROM Voiture C WHERE C.Nom & C.Prenom & C.Adresse LIKE '%" + Filter1_Txt.Text + "%' AND C.Nom & C.Prenom & C.Adresse LIKE '%" + Filter2_Txt.Text + "%'")).AsDataView();
+            Data_Grid_Voiture.ItemsSource = (await Outils.Outils.GetDataSet(@"SELECT ID, Disponibilite, Num_Immatriculation, Num_WW, Date_Mise_En_Circulation, Marque, [Type], [Genre], Type_Carburant, Num_Chassis, Couleur, Prix_TTC, Kilometrage FROM Voiture C WHERE [C.Marque] & [C.Type] & [C.Genre] LIKE '%" + Filter1_Txt.Text + "%' AND [C.Marque] & [C.Type] & [C.Genre] LIKE '%" + Filter2_Txt.Text + "%'")).AsDataView();
             Data_Grid_Voiture.Columns[0].Visibility = Visibility.Collapsed;
+        }
+
+        private void Data_Grid_Voiture_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

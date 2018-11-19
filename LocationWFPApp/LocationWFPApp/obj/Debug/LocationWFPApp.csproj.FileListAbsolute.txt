@@ -129,3 +129,4 @@ C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\Locati
 C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\LocationWFPApp\obj\Debug\LocationWFPApp.exe
 C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\LocationWFPApp\obj\Debug\LocationWFPApp.pdb
 C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\LocationWFPApp\obj\Debug\User_Control\Voiture\User_Control_Voiture.g.cs
+C:\Users\annou\OneDrive\Documents\GitHub\CarRentingService\LocationWFPApp\LocationWFPApp\obj\Debug\User_Control\Voiture\User_Control_Voiture.baml

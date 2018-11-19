@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LocationWFPApp.User_Control.Voiture;
 
 namespace LocationWFPApp
 {
@@ -30,6 +31,7 @@ namespace LocationWFPApp
             User_Controls_HashSet = new Hashtable();
             User_Controls_HashSet.Add("Client", new User_Control_Clients());
             User_Controls_HashSet.Add("Client_Ajout", new User_Control_Ajout_Client());
+            User_Controls_HashSet.Add("Voitures", new User_Control_Voiture());
 
             App.History = new List<string>();
 
@@ -57,6 +59,18 @@ namespace LocationWFPApp
         private void MyTabControl_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Sous_Menu_Voitures_Selected(object sender, RoutedEventArgs e)
+        {
+            ContentGrid.Children.Clear();
+            ContentGrid.Children.Add((UserControl)User_Controls_HashSet["Voitures"]);
+        }
+
+        private void Sous_Menu_Ajout_Voitures_Selected(object sender, RoutedEventArgs e)
+        {
+            //ContentGrid.Children.Clear();
+            //ContentGrid.Children.Add((UserControl)User_Controls_HashSet["Client_Ajout"]);
         }
     }
 }
